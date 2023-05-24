@@ -1,0 +1,28 @@
+<div class="container" style="margin-top: 10%;">
+    <div class="row justify-content-center ">
+        <div class="col-md-4">
+            <div class="card">
+                <div style="margin: auto;">
+                    <h1>REGISTRAR</h1>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" name="nombre" [(ngModel)]="usuario.nombre" placeholder="Nombre" class="form-control" autofocus required>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <input type="text" name="alias" [(ngModel)]="usuario.alias" placeholder="Alias" class="form-control" required>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <input type="text" name="contraseña" [(ngModel)]="usuario.contrasena" placeholder="Contraseña" class="form-control" required>
+                        </div>
+                        <br>
+                        <button class="btn btn-success btn-block col-md-12" (click)="saveNewUsuario()">Registrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

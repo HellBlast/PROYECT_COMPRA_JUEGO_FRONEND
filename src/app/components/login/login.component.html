@@ -1,0 +1,27 @@
+<div class="container" style="margin-top: 10%;">
+    <div class="row justify-content-center ">
+        <div class="col-md-4">
+            <div class="card">
+                <div style="margin: auto;">
+                    <h1>LOGIN</h1>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        <div class="form-group">
+                            <input type="text" name="alias" [(ngModel)]="usuario.alias" placeholder="alias" class="form-control" autofocus
+                                required>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <input type="password" name="pass" [(ngModel)]="usuario.contrasena" placeholder="pass" class="form-control" required>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-danger btn-block col-md-12" (click)="ValidarUsuario()">Iniciar</button>
+                        <br><br>
+                        <a class="btn btn-success btn-block col-md-12" routerLink="/registrar">Registrar</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

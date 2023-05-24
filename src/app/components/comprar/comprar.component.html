@@ -1,0 +1,30 @@
+<app-navegation></app-navegation>
+<div class="col-md-4 offset-md-2">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <p>{{gamer.title}}</p>
+                </div>
+                <br>
+                <div class="form-group">
+                    <p>{{gamer.description}}</p>
+                </div>
+                <br>
+                <div class="form-group">
+                    <img src="{{gamer.image}}" class="card-img-top">
+                </div>
+                <br>
+                <div class="form-group">
+                    <p>{{gamer.precio}}</p>
+                </div>
+                <br>
+                <div class="form-group">
+                    <p>{{usuario}}</p>
+                </div>
+                <br>
+                <button class="btn btn-success btn-block col-md-12" (click)="comprarJuegos()">COMPRAR</button>
+            </form>
+        </div>
+    </div>
+</div>
