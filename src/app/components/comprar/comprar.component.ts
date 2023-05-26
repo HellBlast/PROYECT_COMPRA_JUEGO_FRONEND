@@ -50,10 +50,10 @@ export class ComprarComponent {
           this.gamer.description = resul[0][2];
           this.gamer.image = resul[0][3];
           this.gamer.created_at = resul[0][4];
-          this.gamer.precio = resul[0][5];
+          this.gamer.precio = resul[0][5]-(resul[0][5]*(this.gamerService.can_descuento/100));
           this.comprar.id_usuario = this.gamerService.id_usuario;
           this.comprar.id_gamer = resul[0][0];
-          this.comprar.precio_compra = resul[0][5];
+          this.comprar.precio_compra = this.gamer.precio;
 
           console.log("Registro estraido: ", this.gamer);
         },
@@ -68,7 +68,7 @@ export class ComprarComponent {
     this.gamerService.comJuego(this.comprar)
       .subscribe(
         res => {
-          this.router.navigate(['/login'])
+          this.router.navigate(['/lista-gamer'])
         },
         err => console.log(err)
       )

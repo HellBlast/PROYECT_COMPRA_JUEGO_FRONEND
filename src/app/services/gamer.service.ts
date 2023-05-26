@@ -11,6 +11,8 @@ export class GamerService {
   API_URL = 'http://localhost:3030';
   alias: string = '';
   id_usuario: number = 0;
+  can_descuento: number = 0;
+  tipo_descuento: string = '';
 
   constructor(private http: HttpClient) { }
 
@@ -19,22 +21,22 @@ export class GamerService {
     return this.http.post(`${this.API_URL}/usuario`, usuario);
   }
 
-  validateUsuario(alias: string){
+  validateUsuario(alias: string) {
     return this.http.get(`${this.API_URL}/usuario/${alias}`);
   }
 
   //Gamer
-  getGamer(){
-    return this.http.get(`${this.API_URL}/gamer`);
+  getGamer() {
+    return this.http.get(`${this.API_URL}/gamer_list?id_usuario=${this.id_usuario}&can_descuento=${this.can_descuento}`);
   }
 
-  getGame(id: string){
+  getGame(id: string) {
     return this.http.get(`${this.API_URL}/gamer/${id}`);
   }
 
   //Comprar
 
-  comJuego(comprar: Compra){
+  comJuego(comprar: Compra) {
     return this.http.post(`${this.API_URL}/comprar`, comprar);
   }
 

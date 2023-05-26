@@ -14,7 +14,8 @@ export class RegistrarComponent {
     id: 0,
     nombre: '',
     alias:'',
-    contrasena:''
+    contrasena:'',
+    id_descuento: 1
   }
 
   constructor(private gamerService: GamerService, private router: Router, private activedRoute: ActivatedRoute){}

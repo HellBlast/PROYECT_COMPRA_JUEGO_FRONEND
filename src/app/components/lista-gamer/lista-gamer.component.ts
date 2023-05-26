@@ -8,17 +8,17 @@ import { GamerService } from 'src/app/services/gamer.service';
   styleUrls: ['./lista-gamer.component.css']
 })
 export class ListaGamerComponent {
-  @HostBinding ('class') classes = 'row';
+  @HostBinding('class') classes = 'row';
 
   gamer: any = []
 
-  constructor(private gamerService: GamerService, private router: Router, private activedRoute: ActivatedRoute){}
+  constructor(private gamerService: GamerService, private router: Router, private activedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.getGames();
   }
 
-  getGames(){
+  getGames() {
     this.gamerService.getGamer().subscribe(
       res => {
         this.gamer = res;

@@ -16,7 +16,8 @@ export class LoginComponent {
     id: 0,
     nombre: '',
     alias: '',
-    contrasena: ''
+    contrasena: '',
+    id_descuento: 0
   }
 
   constructor(private gamerService: GamerService, private router: Router, private activedRoute: ActivatedRoute){}
@@ -26,8 +27,11 @@ export class LoginComponent {
       resp => {
         this.dato = resp;
         if(this.usuario.contrasena==this.dato[0][3]){
+          console.log(this.dato);
           this.gamerService.alias = this.usuario.alias;
           this.gamerService.id_usuario = this.dato[0][0];
+          this.gamerService.can_descuento=this.dato[0][6];
+          this.gamerService.tipo_descuento=this.dato[0][7];
           this.router.navigate(['/lista-gamer']);
         }
       },
